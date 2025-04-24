@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Dostęp do konta ChatGPT</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }
+    .hidden { display: none; }
+    .box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #ccc; max-width: 400px; margin: auto; }
+    input[type="password"] { padding: 10px; width: 80%; margin: 10px 0; }
+    button { padding: 10px 20px; background: #00a67e; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Wpisz hasło, aby uzyskać dane konta</h2>
+    <input type="password" id="password" placeholder="Hasło">
+    <br>
+    <button onclick="checkPassword()">Pokaż dane</button>
+    
+    <div id="dane" class="hidden">
+      <h3>Dane do konta:</h3>
+      <p><strong>Email:</strong> login@domena.com</p>
+      <p><strong>Hasło:</strong> twojeHaslo123</p>
+      <p><strong>Kod 2FA:</strong> 654321</p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const haslo = document.getElementById("password").value;
+      if (haslo === "chat123") {
+        document.getElementById("dane").classList.remove("hidden");
+      } else {
+        alert("Nieprawidłowe hasło.");
+      }
+    }
+  </script>
+</body>
+</html>
